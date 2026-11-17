@@ -23,7 +23,7 @@ const mono = JetBrains_Mono({
   display: 'swap',
 })
 
-const siteUrl = 'https://broustein.vercel.app'
+const siteUrl = 'https://broustein-portfolio.vercel.app'
 
 const personJsonLd = {
   '@context': 'https://schema.org',
