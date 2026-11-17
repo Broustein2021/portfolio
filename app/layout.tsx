@@ -23,35 +23,62 @@ const mono = JetBrains_Mono({
   display: 'swap',
 })
 
+const siteUrl = 'https://broustein.vercel.app'
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Jean-Marie Brou',
+  jobTitle: 'Full-Stack Developer & AI Integration',
+  url: siteUrl,
+  sameAs: [
+    'https://www.linkedin.com/in/jean-marie-brou-571022295/',
+    'https://github.com/Broustein2021',
+  ],
+}
+
 export const metadata: Metadata = {
-  title: 'Broustein — IT Manager & Full-Stack Developer',
+  metadataBase: new URL(siteUrl),
+  title: 'Jean-Marie Brou — Full-Stack Developer & AI Integration (Remote)',
   description:
-    'Jean-Marie Brou (Broustein) · IT Manager & Full-Stack Developer in Abidjan, Côte d’Ivoire. SaaS, call center and AI-driven solutions — building systems that move people.',
-  applicationName: 'Broustein Portfolio',
-  authors: [{ name: 'Jean-Marie Ephrem Ghislain Brou' }],
+    'Full-stack developer (PHP, TypeScript, PostgreSQL) specialised in call center systems, VoIP and AI agents. 6+ years in production. Available for remote contracts with European teams.',
+  applicationName: 'Jean-Marie Brou — Portfolio',
+  authors: [{ name: 'Jean-Marie Brou' }],
+  creator: 'Jean-Marie Brou',
   keywords: [
     'full-stack developer',
-    'IT manager',
-    'SaaS',
-    'call center',
-    'AI integration',
+    'remote',
+    'PHP',
+    'Laravel',
+    'Symfony',
+    'Next.js',
+    'PostgreSQL',
     'Asterisk',
-    'Abidjan',
-    "Côte d'Ivoire",
+    'FreeSWITCH',
+    'VoIP',
+    'AI agents',
   ],
-  creator: 'Broustein',
+  alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
-    title: 'Broustein — IT Manager & Full-Stack Developer',
-    description: 'Building systems that move people.',
-    siteName: 'Broustein',
+    title: 'Jean-Marie Brou — Full-Stack Developer & AI Integration',
+    description: 'Call center systems, SaaS platforms and AI agents. Remote, UTC+0.',
+    siteName: 'Jean-Marie Brou',
     locale: 'en_US',
-    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Broustein — IT Manager & Full-Stack Developer' }],
+    url: '/',
+    images: [
+      {
+        url: '/og.png',
+        width: 1200,
+        height: 630,
+        alt: 'Jean-Marie Brou — Full-Stack Developer & AI Integration — Remote, UTC+0',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Broustein — IT Manager & Full-Stack Developer',
-    description: 'Building systems that move people.',
+    title: 'Jean-Marie Brou — Full-Stack Developer & AI Integration',
+    description: 'Call center systems, SaaS platforms and AI agents. Remote, UTC+0.',
     images: ['/og.png'],
   },
   icons: {
@@ -69,7 +96,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       lang="en"
       className={`bg-background ${grotesk.variable} ${serif.variable} ${mono.variable}`}
     >
-      <body>{children}{process.env.NODE_ENV === 'production' && <Analytics />}</body>
+      <body>
+        {children}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
+        {process.env.NODE_ENV === 'production' && <Analytics />}
+      </body>
     </html>
   )
 }
