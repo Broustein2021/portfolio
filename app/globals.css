@@ -212,6 +212,13 @@ button, input, textarea { font: inherit; }
 .contact-form .btn { align-self: flex-start; margin-top: 6px; }
 .form-note { color: var(--accent); font: 500 11px var(--font-mono); margin: 0; }
 
+/* ---------- booking widget ---------- */
+.booking { margin-top: 90px; border-top: 1px solid var(--line); padding-top: 46px; }
+.booking-head { text-align: center; margin-bottom: 30px; }
+.booking-head h3 { margin: 0 0 10px; font-size: 26px; letter-spacing: -.03em; font-weight: 600; }
+.booking-head p { margin: 0; color: var(--muted); font-size: 14px; }
+.calendly-inline-widget { width: 100%; border: 1px solid var(--line); background: var(--panel); overflow: hidden; }
+
 /* ---------- footer ---------- */
 .footer { border-top: 1px solid var(--line); margin-top: 120px; }
 .footer-top { max-width: 1320px; margin: auto; padding: 40px 40px 0; display: flex; justify-content: space-between; align-items: center; gap: 30px; flex-wrap: wrap; color: var(--muted); font: 500 11px var(--font-mono); letter-spacing: .12em; text-transform: uppercase; }
@@ -265,6 +272,8 @@ button, input, textarea { font: inherit; }
   .work-sub { margin-top: 18px; }
   .project-row h3 { font-size: 23px; }
   .contact-form { padding: 26px; }
+  .booking { margin-top: 70px; }
+  .calendly-inline-widget { min-height: 620px; }
   .footer-top { padding: 30px 22px 0; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }

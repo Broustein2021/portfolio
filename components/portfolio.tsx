@@ -1,11 +1,13 @@
 'use client'
 
+import Script from 'next/script'
 import { motion } from 'framer-motion'
 import { ArrowUpRight, Award, Download, Menu, Moon, Send, Sun, X } from 'lucide-react'
 import { useState, type FormEvent } from 'react'
 
 const contact = {
   email: 'broujeanmarie697@gmail.com',
+  calendly: 'https://calendly.com/rendez_vous_sesame',
   phone: '+225 01 51 19 74 76',
   phoneRaw: '+2250151197476',
   linkedin: 'https://www.linkedin.com/in/jean-marie-brou-571022295/',
@@ -86,7 +88,7 @@ export default function Portfolio() {
         </nav>
         <span className="availability-badge"><span className="status-dot" /> Available for remote contracts · UTC+0</span>
         <div className="header-actions">
-          <a className="hire-btn" href="#contact">Book a call <ArrowUpRight size={14} /></a>
+          <a className="hire-btn" href={contact.calendly} target="_blank" rel="noopener noreferrer">Book a call <ArrowUpRight size={14} /></a>
           <button className="icon-button" onClick={() => setDark(!dark)} aria-label={dark ? 'Switch to light theme' : 'Switch to dark theme'}>{dark ? <Sun size={17} /> : <Moon size={17} />}</button>
           <button className="menu-button icon-button" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? 'Close menu' : 'Open menu'}>{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>
         </div>
@@ -105,7 +107,7 @@ export default function Portfolio() {
               <div className="hero-actions">
                 <a className="btn btn-primary" href="#projects">View projects <ArrowUpRight size={15} /></a>
                 <a className="btn btn-ghost" href="/CV_Jean-Marie_Brou_EN.pdf" target="_blank" rel="noreferrer">Download CV <Download size={15} /></a>
-                <a className="cv-link" href="#contact">Book a call <ArrowUpRight size={13} /></a>
+                <a className="cv-link" href={contact.calendly} target="_blank" rel="noopener noreferrer">Book a call <ArrowUpRight size={13} /></a>
               </div>
             </motion.div>
           </div>
@@ -220,6 +222,7 @@ export default function Portfolio() {
             <p className="contact-intro">I take on remote contracts with European teams: call center and VoIP systems, SaaS back ends, and AI agents. I usually reply within 48 hours.</p>
             <a className="huge-mail" href={`mailto:${contact.email}`}>{contact.email}</a>
             <div className="social-row">
+              <a href={contact.calendly} target="_blank" rel="noopener noreferrer"><span>Book a call — pick a time that suits you</span><ArrowUpRight size={13} /></a>
               <a href={contact.linkedin} target="_blank" rel="noreferrer"><span>LinkedIn — {contact.linkedinLabel}</span><ArrowUpRight size={13} /></a>
               <a href="/CV_Jean-Marie_Brou_EN.pdf" target="_blank" rel="noreferrer"><span>Download CV (PDF)</span><Download size={13} /></a>
               <a href={`https://wa.me/${contact.phoneRaw}`} target="_blank" rel="noreferrer"><span>WhatsApp — {contact.phone}</span><ArrowUpRight size={13} /></a>
@@ -233,6 +236,14 @@ export default function Portfolio() {
             <button className="btn btn-primary" type="submit">{sent ? 'Email prepared' : 'Send message'} <Send size={15} /></button>
             {sent && <p className="form-note">Your email app is opening with the message ready to send. Please check it and hit send.</p>}
           </form>
+        </div>
+        <div className="booking">
+          <div className="booking-head">
+            <h3>Prefer to book directly?</h3>
+            <p>Pick a slot in my calendar — a short call to talk about your project.</p>
+          </div>
+          <div className="calendly-inline-widget" data-url={contact.calendly} style={{ minWidth: 320, height: 700 }} />
+          <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="afterInteractive" />
         </div>
       </section>
 
