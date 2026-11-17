@@ -10,7 +10,6 @@ const contact = {
   phoneRaw: '+2250151197476',
   linkedin: 'https://www.linkedin.com/in/jean-marie-brou-571022295/',
   linkedinLabel: 'linkedin.com/in/jean-marie-brou',
-  github: 'https://github.com/Broustein2021',
 }
 
 const awards = [
@@ -222,7 +221,6 @@ export default function Portfolio() {
             <a className="huge-mail" href={`mailto:${contact.email}`}>{contact.email}</a>
             <div className="social-row">
               <a href={contact.linkedin} target="_blank" rel="noreferrer"><span>LinkedIn — {contact.linkedinLabel}</span><ArrowUpRight size={13} /></a>
-              <a href={contact.github} target="_blank" rel="noreferrer"><span>GitHub — Broustein2021</span><ArrowUpRight size={13} /></a>
               <a href="/CV_Jean-Marie_Brou_EN.pdf" target="_blank" rel="noreferrer"><span>Download CV (PDF)</span><Download size={13} /></a>
               <a href={`https://wa.me/${contact.phoneRaw}`} target="_blank" rel="noreferrer"><span>WhatsApp — {contact.phone}</span><ArrowUpRight size={13} /></a>
             </div>
@@ -254,7 +252,7 @@ export default function Portfolio() {
         <div className="footer-brand">Jean-Marie Brou<span className="brand-dot">.</span></div>
         <p>© {new Date().getFullYear()} Jean-Marie Brou — Full-Stack Developer &amp; AI Integration</p>
         <p className="footer-location">Based in Abidjan · Working remotely with European teams · UTC+0</p>
-        <div className="footer-links"><a href={contact.linkedin} target="_blank" rel="noreferrer">LinkedIn</a><a href={contact.github} target="_blank" rel="noreferrer">GitHub</a><a href={`mailto:${contact.email}`}>Email</a><a href="/CV_Jean-Marie_Brou_EN.pdf" target="_blank" rel="noreferrer">CV (PDF)</a><a href="#top">Back to top ↑</a></div>
+        <div className="footer-links"><a href={contact.linkedin} target="_blank" rel="noreferrer">LinkedIn</a><a href={`mailto:${contact.email}`}>Email</a><a href="/CV_Jean-Marie_Brou_EN.pdf" target="_blank" rel="noreferrer">CV (PDF)</a><a href="#top">Back to top ↑</a></div>
       </div>
       <div className="footer-ghost" aria-hidden="true">BROU</div>
     </footer>
